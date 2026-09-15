@@ -4,36 +4,6 @@
 // ===============================
 
 // -------------------------------
-// Hero banner automatic slideshow
-// -------------------------------
-
-const heroSlides = document.querySelectorAll(".hero-slide");
-
-let heroIndex = 0;
-const HERO_INTERVAL = 9000;
-
-function showHeroSlide(index) {
-    heroSlides.forEach((slide, i) => {
-        slide.classList.toggle("active", i === index);
-    });
-
-    heroIndex = index;
-}
-
-function nextHeroSlide() {
-    showHeroSlide((heroIndex + 1) % heroSlides.length);
-}
-
-if (heroSlides.length > 1) {
-
-    // Show the first banner immediately when the page loads
-    showHeroSlide(0);
-
-    // Automatically transition every 6 seconds
-    setInterval(nextHeroSlide, HERO_INTERVAL);
-}
-
-// -------------------------------
 // Mobile nav toggle
 // -------------------------------
 const navToggle = document.getElementById("navToggle");
